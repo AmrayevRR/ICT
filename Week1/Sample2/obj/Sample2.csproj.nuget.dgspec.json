@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Амраева Карина\\source\\repos\\Sample2\\Sample2.csproj": {}
+    "C:\\Users\\Амраева Карина\\source\\repos\\ict\\Week1\\Sample2\\Sample2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Амраева Карина\\source\\repos\\Sample2\\Sample2.csproj": {
+    "C:\\Users\\Амраева Карина\\source\\repos\\ict\\Week1\\Sample2\\Sample2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Амраева Карина\\source\\repos\\Sample2\\Sample2.csproj",
+        "projectUniqueName": "C:\\Users\\Амраева Карина\\source\\repos\\ict\\Week1\\Sample2\\Sample2.csproj",
         "projectName": "Sample2",
-        "projectPath": "C:\\Users\\Амраева Карина\\source\\repos\\Sample2\\Sample2.csproj",
+        "projectPath": "C:\\Users\\Амраева Карина\\source\\repos\\ict\\Week1\\Sample2\\Sample2.csproj",
         "packagesPath": "C:\\Users\\Амраева Карина\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Амраева Карина\\source\\repos\\Sample2\\obj\\",
+        "outputPath": "C:\\Users\\Амраева Карина\\source\\repos\\ict\\Week1\\Sample2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Амраева Карина\\AppData\\Roaming\\NuGet\\NuGet.Config",

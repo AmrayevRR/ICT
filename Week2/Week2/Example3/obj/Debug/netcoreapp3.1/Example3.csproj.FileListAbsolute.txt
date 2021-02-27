@@ -1,0 +1,13 @@
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.exe
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.deps.json
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.runtimeconfig.json
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.runtimeconfig.dev.json
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.dll
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\bin\Debug\netcoreapp3.1\Example3.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.csprojAssemblyReference.cache
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.AssemblyInfoInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.AssemblyInfo.cs
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.csproj.CoreCompileInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.dll
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week2\Week2\Example3\obj\Debug\netcoreapp3.1\Example3.genruntimeconfig.cache
