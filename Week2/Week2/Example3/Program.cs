@@ -1,18 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
-namespace Example3
+namespace Example2
 {
-    class Program
+    class Layer
     {
-        static void Main(string[] args)
+        public DirectoryInfo dir
         {
-            F3();
+            get;
+            set;
         }
-        private static void PrintInfo (string path, int pos) 
+        public int pos
         {
-            //Console.BackgroundColor = ConsoleColor.Blue;
-            DirectoryInfo dir = new DirectoryInfo(path);
+            get;
+            set;
+        }
+        public List<FileSystemInfo> content
+        {
+            get;
+            set;
+        }
+
+        public Layer(DirectoryInfo dir, int pos)
+        {
+            this.dir = dir;
+            this.pos = pos;
+            this.content = new List<FileSystemInfo>();
+
+
+            content.AddRange(this.dir.GetDirectories());
+            content.AddRange(this.dir.GetFiles());
+        }
+
+        public void PrintInfo()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+
             Console.ForegroundColor = ConsoleColor.White;
             int cnt = 0;
             foreach (DirectoryInfo d in dir.GetDirectories())
@@ -23,40 +48,91 @@ namespace Example3
                 }
                 else
                 {
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.Blue;
                 }
                 Console.WriteLine(d.Name);
                 cnt++;
             }
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             foreach (FileInfo f in dir.GetFiles())
             {
+                if (cnt == pos)
+                {
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                }
                 Console.WriteLine(f.Name);
+                cnt++;
             }
         }
+
+        public FileSystemInfo GetCurrentObject()
+        {
+            return content[pos];
+        }
+
+        public void SetNewPosition(int d)
+        {
+            if (d > 0)
+            {
+                pos++;
+            }
+            else
+            {
+                pos--;
+            }
+            if (pos >= content.Count)
+            {
+                pos = 0;
+            }
+            else if (pos < 0)
+            {
+                pos = content.Count - 1;
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            F3();
+        }
+
         private static void F3()
         {
-            int pos = 0;
+
+            Stack<Layer> history = new Stack<Layer>();
+            history.Push(new Layer(new DirectoryInfo(@"C:\Users\Амраева Карина\source\repos\ict"), 0));
 
             bool escape = false;
-            
+
             while (!escape)
             {
                 Console.Clear();
-                PrintInfo(@"C:\Program Files\JetBrains\DataGrip 2020.2.2", pos);
+
+                history.Peek().PrintInfo();
 
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
-                
+
                 switch (consoleKeyInfo.Key)
                 {
+                    case ConsoleKey.Enter:
+                        if (history.Peek().GetCurrentObject().GetType() == typeof(DirectoryInfo))
+                        {
+                            history.Push(new Layer(history.Peek().GetCurrentObject() as DirectoryInfo, 0));
+                        }
+                        break;
                     case ConsoleKey.UpArrow:
-                        if (pos > 0) pos--;
+                        history.Peek().SetNewPosition(-1);
                         break;
                     case ConsoleKey.DownArrow:
-                        pos++;
+                        history.Peek().SetNewPosition(1);
                         break;
                     case ConsoleKey.Escape:
-                        escape = true;
+                        history.Pop();
                         break;
                 }
             }
@@ -64,7 +140,7 @@ namespace Example3
 
         private static void F2()
         {
-            while(true)
+            while (true)
             {
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.Key == ConsoleKey.Escape) break;
