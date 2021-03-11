@@ -10,3 +10,16 @@ C:\Users\Амраева Карина\source\repos\Sample2\obj\Debug\netcoreapp3.
 C:\Users\Амраева Карина\source\repos\Sample2\obj\Debug\netcoreapp3.1\Sample2.dll
 C:\Users\Амраева Карина\source\repos\Sample2\obj\Debug\netcoreapp3.1\Sample2.pdb
 C:\Users\Амраева Карина\source\repos\Sample2\obj\Debug\netcoreapp3.1\Sample2.genruntimeconfig.cache
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.exe
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.deps.json
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.runtimeconfig.json
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.runtimeconfig.dev.json
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.dll
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\bin\Debug\netcoreapp3.1\Sample2.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.csprojAssemblyReference.cache
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.AssemblyInfoInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.AssemblyInfo.cs
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.csproj.CoreCompileInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.dll
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week1\Sample2\obj\Debug\netcoreapp3.1\Sample2.genruntimeconfig.cache
