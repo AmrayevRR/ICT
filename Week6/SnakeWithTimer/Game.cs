@@ -112,7 +112,7 @@ namespace Example1
 
         private void GameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Console.Title = DateTime.Now.ToLongTimeString();
+            Console.Title = "Time: " + DateTime.Now.ToLongTimeString() + "     Points: " + (w.body.Count-1);
         }
 
         public void KeyPressed(ConsoleKeyInfo pressedKey)
