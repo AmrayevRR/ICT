@@ -95,7 +95,7 @@ namespace Example1
             if (foodWasGenerated)
                 GameObject.drawGameObject(f);
 
-            if (w.body.Count > 5)
+            if (w.body.Count > 3)
             {
                 Console.Clear();
                 w = new Worm('@', ConsoleColor.Green);
