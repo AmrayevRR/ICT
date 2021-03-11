@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Example1
 {
-    class Wall : GameObject
+    public class Wall : GameObject
     {
         public Wall(char sign, ConsoleColor color, string path) : base(sign, color)
         {

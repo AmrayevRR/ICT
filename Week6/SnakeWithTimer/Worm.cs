@@ -82,5 +82,17 @@ namespace Example1
             }
             return res;
         }
+        
+        public static bool IsLegalMove(Worm worm, Wall wall)
+        {
+            for (int i = 0; i < wall.body.Count; i++)
+            {
+                if ((worm.body[0].X + worm.Dx == wall.body[i].X && worm.body[0].Y == wall.body[i].Y) || (worm.body[0].X == wall.body[i].X && worm.body[0].Y + worm.Dy == wall.body[i].Y))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

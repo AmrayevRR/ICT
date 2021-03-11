@@ -52,6 +52,15 @@ namespace Example1
             }
             return false;
         }
+        /*bool CheckCollisionWormWithWall()
+        {
+            for (int i = 0; i < wall.body.Count; i++)
+            {
+                if (w.body[0].X == wall.body[i].X && w.body[0].Y == wall.body[i].Y)
+                    return true;
+            }
+            return false;
+        }*/
         bool CheckFoodAppearOnWorm()
         {
             for (int i = 0; i < w.body.Count; i++)
@@ -70,7 +79,8 @@ namespace Example1
 
             GameObject.clearGameObject(w);
 
-            w.Move();
+            if (Worm.IsLegalMove(w, wall))
+                w.Move();
 
             GameObject.drawGameObject(w);
 
