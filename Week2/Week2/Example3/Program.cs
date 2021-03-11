@@ -16,11 +16,18 @@ namespace Example2
             get;
             set;
         }
+        public FileInfo file 
+        {
+            get;
+            set;
+        }
         public List<FileSystemInfo> content
         {
             get;
             set;
         }
+        public bool showCreationTime = false;
+        public bool showLastUpdateTime = false;
 
         public Layer(DirectoryInfo dir, int pos)
         {
@@ -32,40 +39,87 @@ namespace Example2
             content.AddRange(this.dir.GetDirectories());
             content.AddRange(this.dir.GetFiles());
         }
+        public Layer(FileInfo file, int pos)
+        {
+            this.file = file;
+        }
+
+        long GetDirectoryLength(DirectoryInfo directory)
+        {
+            long length = 0;
+
+            foreach (DirectoryInfo d in directory.GetDirectories())
+                length += GetDirectoryLength(d);
+
+            foreach (FileInfo f in directory.GetFiles())
+                length += f.Length;
+
+            return length;
+        }
 
         public void PrintInfo()
         {
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Cyan;
             Console.Clear();
+            string output;
 
-            Console.ForegroundColor = ConsoleColor.White;
+            //Console.ForegroundColor = ConsoleColor.White;
             int cnt = 0;
             foreach (DirectoryInfo d in dir.GetDirectories())
             {
+                output = d.Name + "    " + GetDirectoryLength(d) + " bytes";
+
                 if (cnt == pos)
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Blue;
+
+                    if (showCreationTime)
+                        output += "    Creation time: " + d.CreationTime;
+                    if (showLastUpdateTime)
+                        output += "    Last update time: " + d.LastWriteTime;
                 }
                 else
                 {
-                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                 }
-                Console.WriteLine(d.Name);
+                Console.WriteLine(output);
                 cnt++;
             }
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            //Console.ForegroundColor = ConsoleColor.Red;
             foreach (FileInfo f in dir.GetFiles())
             {
+                output = f.Name + "    " + f.Length + " bytes";
+
                 if (cnt == pos)
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.BackgroundColor = ConsoleColor.Blue;
+
+                    if (showCreationTime)
+                        output += "    Creation time: " + f.CreationTime;
+                    if (showLastUpdateTime)
+                        output += "    Last update time: " + f.LastWriteTime;
                 }
                 else
                 {
-                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                 }
-                Console.WriteLine(f.Name);
+                Console.WriteLine(output);
                 cnt++;
+            }
+        }
+
+        public void PrintFileContent()
+        {
+            Console.Clear();
+
+            string[] lines = File.ReadAllLines(file.FullName);
+            foreach(string line in lines) 
+            {
+                Console.WriteLine(line);
             }
         }
 
@@ -108,32 +162,57 @@ namespace Example2
             history.Push(new Layer(new DirectoryInfo(@"C:\Users\Амраева Карина\source\repos\ict"), 0));
 
             bool escape = false;
+            bool fileIsSelected = false;
 
             while (!escape)
             {
                 Console.Clear();
 
-                history.Peek().PrintInfo();
+                if (fileIsSelected)
+                    history.Peek().PrintFileContent();
+                else
+                    history.Peek().PrintInfo();
 
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
 
                 switch (consoleKeyInfo.Key)
                 {
                     case ConsoleKey.Enter:
+                        history.Peek().showCreationTime = false;
+                        history.Peek().showLastUpdateTime = false;
                         if (history.Peek().GetCurrentObject().GetType() == typeof(DirectoryInfo))
                         {
                             history.Push(new Layer(history.Peek().GetCurrentObject() as DirectoryInfo, 0));
                         }
+                        else
+                        {
+                            history.Push(new Layer(history.Peek().GetCurrentObject() as FileInfo, 0));
+                            fileIsSelected = true;
+                        }
                         break;
                     case ConsoleKey.UpArrow:
+                        history.Peek().showCreationTime = false;
+                        history.Peek().showLastUpdateTime = false;
                         history.Peek().SetNewPosition(-1);
                         break;
                     case ConsoleKey.DownArrow:
+                        history.Peek().showCreationTime = false;
+                        history.Peek().showLastUpdateTime = false;
                         history.Peek().SetNewPosition(1);
                         break;
                     case ConsoleKey.Escape:
+                        history.Peek().showCreationTime = false;
+                        history.Peek().showLastUpdateTime = false;
                         history.Pop();
+                        fileIsSelected = false;
                         break;
+                    case ConsoleKey.T:
+                        history.Peek().showCreationTime = !history.Peek().showCreationTime;
+                        break;
+                    case ConsoleKey.U:
+                        history.Peek().showLastUpdateTime = !history.Peek().showLastUpdateTime;
+                        break;
+
                 }
             }
         }
