@@ -16,6 +16,7 @@ namespace Example2
         Rectangle, 
         Pen,
         Triangle,
+        Circle,
         Eraser,
         Fill,
         Fill2
@@ -25,6 +26,7 @@ namespace Example2
         Bitmap bitmap = default(Bitmap);
         Graphics graphics = default(Graphics);
         Pen pen = new Pen(Color.Black);
+        Pen eraser = new Pen(Color.White);
         Point prevPoint = default(Point);
         Point currentPoint = default(Point);
         bool isMousePressed = false;
@@ -85,6 +87,11 @@ namespace Example2
             currentTool = Tool.Fill2;
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.Circle;
+        }
+
         Rectangle GetMRectangle(Point pPoint, Point cPoint)
         {
             return new Rectangle 
@@ -93,6 +100,16 @@ namespace Example2
                 Y = Math.Min(pPoint.Y, cPoint.Y), 
                 Width = Math.Abs(pPoint.X - cPoint.X), 
                 Height = Math.Abs(pPoint.Y - cPoint.Y) 
+            };
+        }
+        Rectangle GetSquare(Point pPoint, Point cPoint)
+        {
+            return new Rectangle
+            {
+                X = Math.Min(pPoint.X, cPoint.X),
+                Y = Math.Min(pPoint.Y, cPoint.Y),
+                Width = Math.Abs(pPoint.Y - cPoint.Y),
+                Height = Math.Abs(pPoint.Y - cPoint.Y)
             };
         }
 
@@ -117,6 +134,7 @@ namespace Example2
                     case Tool.Line:
                     case Tool.Rectangle:
                     case Tool.Triangle:
+                    case Tool.Circle:
                         currentPoint = e.Location;
                         break;
                     case Tool.Pen:
@@ -127,7 +145,7 @@ namespace Example2
                     case Tool.Eraser:
                         prevPoint = currentPoint;
                         currentPoint = e.Location;
-                        graphics.DrawLine(pen, prevPoint, currentPoint);
+                        graphics.DrawLine(eraser, prevPoint, currentPoint);
                         break;
                     case Tool.Fill:
                         break;
@@ -181,6 +199,10 @@ namespace Example2
                 case Tool.Triangle:
                     DrawTriangle(GetMRectangle(prevPoint, currentPoint), graphics);
                     break;
+                case Tool.Circle:
+                    //graphics.DrawEllipse(pen, GetMRectangle(prevPoint, currentPoint));
+                    graphics.DrawEllipse(pen, GetSquare(prevPoint, currentPoint));
+                    break;
                 case Tool.Fill:
                     break;
                 case Tool.Fill2:
@@ -208,6 +230,10 @@ namespace Example2
                     break;
                 case Tool.Triangle:
                     DrawTriangle(GetMRectangle(prevPoint, currentPoint), e.Graphics);
+                    break;
+                case Tool.Circle:
+                    //e.Graphics.DrawEllipse(pen, GetMRectangle(prevPoint, currentPoint));
+                    e.Graphics.DrawEllipse(pen, GetSquare(prevPoint, currentPoint));
                     break;
                 case Tool.Fill:
                     break;
@@ -272,6 +298,7 @@ namespace Example2
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             pen.Width = (float)numericUpDown1.Value;
+            eraser.Width = (float)numericUpDown1.Value;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -279,6 +306,21 @@ namespace Example2
             //Color change
             Label l = (Label)sender;
             pen.Color = l.BackColor;
+        }
+
+        ColorDialog colorDialog1 = new ColorDialog();
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // расширенное окно для выбора цвета
+            colorDialog1.FullOpen = true;
+            // установка начального цвета для colorDialog
+            colorDialog1.Color = this.BackColor;
+
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета формы
+            button9.BackColor = colorDialog1.Color;
+            pen.Color = colorDialog1.Color;
         }
     }
 }
