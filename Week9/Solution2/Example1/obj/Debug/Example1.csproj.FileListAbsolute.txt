@@ -1,0 +1,11 @@
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\bin\Debug\Example1.exe.config
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\bin\Debug\Example1.exe
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\bin\Debug\Example1.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.csprojAssemblyReference.cache
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.Form1.resources
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.Properties.Resources.resources
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.csproj.GenerateResource.cache
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.csproj.CoreCompileInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.exe
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week9\Solution1\Example1\obj\Debug\Example1.MyMessageBox.resources

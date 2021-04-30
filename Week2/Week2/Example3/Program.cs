@@ -67,7 +67,7 @@ namespace Example2
             int cnt = 0;
             foreach (DirectoryInfo d in dir.GetDirectories())
             {
-                output = d.Name + "    " + GetDirectoryLength(d) + " bytes";
+                output = d.Name + "    " + GetDirectoryLength(d)/10000000 + " Mbytes";
 
                 if (cnt == pos)
                 {
@@ -90,7 +90,7 @@ namespace Example2
             //Console.ForegroundColor = ConsoleColor.Red;
             foreach (FileInfo f in dir.GetFiles())
             {
-                output = f.Name + "    " + f.Length + " bytes";
+                output = f.Name + "    " + f.Length/1000000 + " Mbytes";
 
                 if (cnt == pos)
                 {

@@ -12,7 +12,7 @@ namespace Sample2
             //int num = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine(Solution1.numberOfSteps(num));
 
-            int n = Convert.ToInt32(Console.ReadLine());
+            /*int n = Convert.ToInt32(Console.ReadLine());
             string[] word1 = new string[n];
             string str;
             for (int i = 0; i < n; i++)
@@ -25,7 +25,12 @@ namespace Sample2
             {
                 word2[i] = Convert.ToString(Console.ReadLine());
             }
-            Console.WriteLine(Solution2.ArrayStringAreEqual(word1, word2));
+            Console.WriteLine(Solution2.ArrayStringAreEqual(word1, word2));*/
+
+            Cat cat = new Cat(2);
+
+            Console.WriteLine(cat.Size);
+
         }
     }
 
@@ -77,4 +82,27 @@ namespace Sample2
             return str1 == str2;
         }
     };
+
+    public class Cat
+    {
+        int size;
+
+
+        public int Size
+        {
+            get
+            {
+                return size;
+            }
+            set 
+            {
+                this.size = value;
+            }
+        }
+
+        public Cat(int size)
+        {
+            this.size = size;
+        }
+    }
 }

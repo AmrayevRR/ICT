@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Levels\Level4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Levels\Level3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

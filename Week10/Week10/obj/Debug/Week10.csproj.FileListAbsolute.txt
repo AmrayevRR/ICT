@@ -1,0 +1,10 @@
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\bin\Debug\Week10.exe.config
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\bin\Debug\Week10.exe
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\bin\Debug\Week10.pdb
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.csprojAssemblyReference.cache
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.Form1.resources
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.Properties.Resources.resources
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.csproj.GenerateResource.cache
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.csproj.CoreCompileInputs.cache
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.exe
+C:\Users\Амраева Карина\source\repos\ict\Week10\Week10\obj\Debug\Week10.pdb
